@@ -11,8 +11,8 @@ import api from '../../services/api';
 
 function Login() {
 
-    const [email, setEmail] = useState('testing-user@nave.rs');
-    const [password, setPassword] = useState('nave1234');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const history = useHistory();
 

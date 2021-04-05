@@ -73,7 +73,7 @@ function Home (){
     }
 
     const handleEdit = (naver) => {
-        history.push({
+        history.replace({
             pathname: '/edit',
             state: naver
         })

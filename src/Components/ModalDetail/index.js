@@ -7,10 +7,10 @@ import { MdClose, MdDelete, MdEdit } from 'react-icons/md';
 
 import './styles.css';
 
-function Modal ({visible, setVisible, handleDelete, handleEdit, ...props}) {
+function Modal ({visible, setVisible, handleDelete, ...props}) {
 
     const {name, job_role, birthdate, admission_date, project, url} = props.naver;
-
+    
     return (
         <ReactModal 
             ariaHideApp={false}
@@ -60,7 +60,12 @@ function Modal ({visible, setVisible, handleDelete, handleEdit, ...props}) {
                     <a onClick={()=>{handleDelete(props.naver)}} >
                         <MdDelete size={24} />
                     </a>
-                    <Link to="/naverControllers" onClick={()=>{handleEdit(props.naver)}}  >
+                    <Link 
+                        to={{
+                            pathname: "/edit",
+                            state: props.naver
+                        }}
+                    >
                         <MdEdit size={24}/>
                     </Link>
                 </div>
