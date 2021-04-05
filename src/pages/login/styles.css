@@ -1,0 +1,40 @@
+.content {
+    height: 100vh;
+}
+
+.Card {
+    margin-top: 112px;
+    padding: 40px 32px;
+    width: 448px;
+    height: 408px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid #212121;
+    box-sizing: border-box;
+}
+
+input {
+    padding: 8px;
+    font: 400 14px/24px Montserrat, sans-serif;
+    border: 1px solid #424242;
+}
+
+.Input {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 520px) {
+    .Card {
+        margin-top: 24px;
+        padding: 20px 16px;
+        width: auto;
+        height: auto;
+    
+        gap: 8px;
+    }
+}

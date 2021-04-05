@@ -1,0 +1,73 @@
+.optionsBar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.naverContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.naverCard {
+    width: 281px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.naverCard:hover{
+    box-shadow: 0px 0px 6px 4px #ccc;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.naverCard img {
+    width: 280px;
+    height: 280px;
+}
+
+.naverCard .naverDescription {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 4px;
+}
+
+.naverCard .naverOptions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-left: 4px;
+}
+
+@media screen and (max-width: 660px) {
+
+    .naverContent {
+        justify-content: center;
+    }
+
+}
+
+
+@media screen and (max-width: 375px) {
+
+    .optionsBar {
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+

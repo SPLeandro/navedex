@@ -1,0 +1,46 @@
+.content {
+    display: flex;
+    width: 592px;
+    height: auto;
+    flex-direction: column;
+}
+
+.content .contentHeader{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.content .contentBody {
+    margin: 32px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.content .contentFooter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 620px) {
+    .content {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .content .contentBody {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content .contentFooter {
+        justify-content: center;
+    }
+}
+
+
