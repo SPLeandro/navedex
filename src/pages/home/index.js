@@ -15,33 +15,35 @@ function Home (){
 
     const [navers, setNavers] = useState();
 
-    const [alertConfig, setAlertConfig] = useState({
-        visible: false,
-        title: "",
-        message: "",
-        buttons: "",
-    });
+    const [alertConfig, setAlertConfig] = useState({});
 
     const [modalVisible, setModalVisible] = useState(false);
     const [naverDetail, setNaverDetail] =useState('');
 
     const history = useHistory();
 
+    const showAlert = (title, message, buttons = null) => {
+
+        const alertConfig = {
+            visible: true,
+            title,
+            message,
+            buttons,
+        }
+        setAlertConfig(alertConfig);
+    }
+
     const handleNewNaver = () => {
         history.replace('/new')
     }
 
     function handleRequestConfirm(naver){
-        const alertConfig = {
-            visible: true,
-            title: "Excluir Naver",
-            message: "Tem certeza que deseja excluir este Naver?",
-            buttons: [
-                <Button type="outlinedButton" onClick={()=>{setAlertConfig(!alertConfig.visible)}}>Cancelar</Button>, 
-                <Button onClick={()=>{handleDelete(naver)}}>Excluir</Button>
-            ]
-        }
-        setAlertConfig(alertConfig);
+        showAlert(
+        "Excluir Naver",
+        "Tem certeza que deseja excluir este Naver?", 
+        [<Button type="outlinedButton" onClick={()=>{setAlertConfig(!alertConfig.visible)}}>Cancelar</Button>, 
+        <Button onClick={()=>{handleDelete(naver)}}>Excluir</Button>], 
+        );
     }
 
     const handleDelete = (naver) => {
@@ -53,13 +55,7 @@ function Home (){
         })
         .then(response => {
 
-            const alertConfig = {
-                visible: true,
-                title: "Naver excluído",
-                message: "Naver excluído com sucesso!",
-                buttons: null,
-            }
-            setAlertConfig(alertConfig);
+            showAlert("Naver excluído", "Naver excluído com sucesso!");
 
             const attNavers = navers.filter(arrNaver => {
                 if (arrNaver.id !== naver.id) {
@@ -104,7 +100,8 @@ function Home (){
             setNavers(response.data);
         })
         .catch(error => {
-            alert(error);
+            const {errorCode, name, message} = error.response.data;
+            showAlert(`Request Error ${errorCode}`, `${name} - ${message}`);
         })
 
     },[])

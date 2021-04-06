@@ -10,6 +10,10 @@ import './styles.css';
 function Modal ({visible, setVisible, handleDelete, ...props}) {
 
     const {name, job_role, birthdate, admission_date, project, url} = props.naver;
+
+    function convertDate(date){
+        return `${date.substring(8, 10)}/${date.substring(5, 7)}/${date.substring(0, 4)}`
+    }
     
     return (
         <ReactModal 
@@ -43,12 +47,12 @@ function Modal ({visible, setVisible, handleDelete, ...props}) {
                 
                 <div className="naverDetailInfo">
                     <h3>Idade</h3>
-                    <span>{birthdate}</span>
+                    <span>{birthdate ? convertDate(birthdate) : ""}</span>
                 </div>
 
                 <div className="naverDetailInfo">
                     <h3>Tempo de empresa</h3>
-                    <span>{admission_date}</span>
+                    <span>{admission_date ?     convertDate(admission_date) : ""}</span>
                 </div>
 
                 <div className="naverDetailInfo">

@@ -3,7 +3,7 @@
 }
 
 .Card {
-    margin-top: 112px;
+    margin-top: 156px;
     padding: 40px 32px;
     width: 448px;
     height: 408px;
@@ -17,24 +17,18 @@
     box-sizing: border-box;
 }
 
-input {
-    padding: 8px;
-    font: 400 14px/24px Montserrat, sans-serif;
-    border: 1px solid #424242;
-}
-
-.Input {
-    display: flex;
-    flex-direction: column;
+.Card img{
+    width: 100%;
+    height: auto;
 }
 
 @media screen and (max-width: 520px) {
     .Card {
-        margin-top: 24px;
-        padding: 20px 16px;
-        width: auto;
+        max-width: 92vw;
+        max-height: fit-content;
+        width: 100%;
         height: auto;
     
-        gap: 8px;
+        gap: 32px;
     }
 }

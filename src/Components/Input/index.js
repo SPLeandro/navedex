@@ -1,3 +1,5 @@
+import './styles.css'
+
 function Input ({type, label, placeholder, value, onChange, width = "280px"}) {
     
     return (

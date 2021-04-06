@@ -52,8 +52,9 @@
     }
 
     .naverDetailContainer {
+        max-width: 92vw;
         max-height: 98vh;
-        width: auto;
+        width: fit-content;
         height: auto;
         flex-direction: column;
     }

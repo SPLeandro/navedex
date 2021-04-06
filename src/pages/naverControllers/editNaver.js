@@ -29,7 +29,6 @@ function NaverOptions(props){
     });
 
     useEffect(()=>{
-        console.log(props.location);
         const {id, name, job_role, admission_date, birthdate, project, url} = props.location.state;
 
         function convertDate(date){
