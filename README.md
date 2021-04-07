@@ -9,6 +9,8 @@ O layout foi desenvolvido baseado nas telas passadas pelo [figma](https://www.fi
 
 ## Layout web in mobile
 
+Para promover a acessibilidade por meio dos dispositivos móveis, há uma certa responsividade dos componentes, possibilitando o uso de todas as funcionalidades disponíveis.
+
 ![login](https://i.ibb.co/0qFC09Z/login.png)
 ![home](https://i.ibb.co/1X07Zbd/home.png)
 ![newNaver](https://i.ibb.co/P1YXx2P/newNaver.png)
