@@ -21,13 +21,18 @@ function NaverOptions(props){
     const [project, setProject] = useState('');
     const [url, setUrl] = useState('');
 
-    const [alertConfig, setAlertConfig] = useState({
-        visible: false,
-        title: "",
-        message: "",
-        buttons: "",
-    });
+    const [alertConfig, setAlertConfig] = useState({});
+    const showAlert = (title, message, buttons = null) => {
 
+        const alertConfig = {
+            visible: true,
+            title,
+            message,
+            buttons,
+        }
+        setAlertConfig(alertConfig);
+    }
+    
     useEffect(()=>{
         const {id, name, job_role, admission_date, birthdate, project, url} = props.location.state;
 
@@ -58,15 +63,12 @@ function NaverOptions(props){
                 url
             }
 
-            console.log(data);
-
             api.put(`/navers/${id}`, data, {
                 headers: {
                     'Authorization': 'Bearer ' + sessionStorage.getItem('token')
                 }
             })
             .then(response => {
-                console.log(response);
                 if (response.status >= 200 && response.status < 300){
 
                     const alertConfig = {
@@ -79,11 +81,11 @@ function NaverOptions(props){
                 }
             })
             .catch(error => {
-                alert(error);
-                console.log(error);
+                const {errorCode, name, message} = error.response.data;
+                showAlert(`Request Error ${errorCode}`, `${name} - ${message}`);
             })
         } else {
-            alert('erro, campo em branco')
+            showAlert('Erro!', 'Há algum campo em branco. Por favor insira os dados corretamente!');
         }
 
         

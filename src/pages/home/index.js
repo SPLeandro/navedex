@@ -9,6 +9,7 @@ import ModalDetail from '../../Components/ModalDetail';
 
 import api from '../../services/api';
 
+import userImgDefault from '../../assets/default-user-image.png'
 import './styles.css'
 
 function Home (){
@@ -116,7 +117,7 @@ function Home (){
             <div className="naverContent">        
                 {navers?.map(naver => (
                     <div className="naverCard" key={naver.id} onClick={e => {handleShowNaver(naver)}}>
-                        <img src={naver.url} alt={naver.name}></img>
+                        <img src={naver.url} onError={(e)=>{e.target.onerror = null; e.target.src=userImgDefault}}  alt={naver.name}></img>
 
                         <div className="naverDescription">
                             <h3>{naver.name}</h3>

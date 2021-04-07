@@ -4,6 +4,7 @@ import ReactModal from 'react-modal';
 import {Link} from 'react-router-dom';
 
 import { MdClose, MdDelete, MdEdit } from 'react-icons/md';
+import userImgDefault from '../../assets/default-user-image.png';
 
 import './styles.css';
 
@@ -34,9 +35,8 @@ function Modal ({visible, setVisible, handleDelete, ...props}) {
             >
                 <MdClose size={20}/>
             </a>
-        
             
-            <img src={url} alt="naver"/>
+            <img src={url} onError={(e)=>{e.target.onerror = null; e.target.src=userImgDefault}} alt="naver"/>
 
             <div className="naverDetailContent">
 

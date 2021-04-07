@@ -13,19 +13,24 @@ import api from '../../services/api';
 
 function NaverOptions(props){
 
-    const [alertConfig, setAlertConfig] = useState({
-        visible: false,
-        title: "",
-        message: "",
-        buttons: "",
-    });
+    const [name, setName] = useState('Jose');
+    const [job_role, setJob_role] = useState('Dev');
+    const [admission_date, setAdmission_date] = useState('10/04/2020');
+    const [birthdate, setBirthdate] = useState('05/10/2003');   
+    const [project, setProject] = useState('Project Frontend Test');
+    const [url, setUrl] = useState('https://ibcdn.canaltech.com.br/J8C9xiYBlDcfeTZrFl6rNBtYhMU=/138x138:5315x3052/512x288/smart/i321928.jpeg');
 
-    const [name, setName] = useState('');
-    const [job_role, setJob_role] = useState('');
-    const [admission_date, setAdmission_date] = useState('');
-    const [birthdate, setBirthdate] = useState('');   
-    const [project, setProject] = useState('');
-    const [url, setUrl] = useState('');
+    const [alertConfig, setAlertConfig] = useState({});
+    const showAlert = (title, message, buttons = null) => {
+
+        const alertConfig = {
+            visible: true,
+            title,
+            message,
+            buttons,
+        }
+        setAlertConfig(alertConfig);
+    }
 
     function handleCreateNewNaver() {
 
@@ -47,22 +52,15 @@ function NaverOptions(props){
             })
             .then(response => {
                 if (response.status >= 200 && response.status < 300){
-
-                    const alertConfig = {
-                        visible: true,
-                        title: "Naver criado",
-                        message: "Naver criado com Sucesso!",
-                        buttons: null,
-                    }
-                    setAlertConfig(alertConfig);
+                    showAlert("Naver criado", "Naver criado com Sucesso!");
                 }
             })
             .catch(error => {
-                alert(error);
-                console.log(error);
+                const {errorCode, name, message} = error.response.data;
+                showAlert(`Request Error ${errorCode}`, `${name} - ${message}`);
             })
         } else {
-            alert('erro, campo em branco')
+            showAlert('Erro!', 'Há algum campo em branco. Por favor insira os dados corretamente!');
         }
 
         

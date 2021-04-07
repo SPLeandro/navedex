@@ -27,22 +27,3 @@
   color: #fff;
   cursor: pointer;
 }
-
-.stringButton{
-  width: fit-content;
-  height: fit-content;
-  background-color: transparent;
-  border: none;
-  font: 600 14px/24px Montserrat, sans-serif; 
-  text-decoration: none;
-  color: #212121;
-}
-
-.stringButton:hover {
-  opacity: 0.8; 
-  cursor: pointer;
-}
-
-
-  
-  
