@@ -9,11 +9,13 @@ O layout foi desenvolvido baseado nas telas passadas pelo [figma](https://www.fi
 
 ## Layout web in mobile
 
-![login](https://prntscr.com/11655yr)
-![home](https://prntscr.com/11656bs)
-![newNaver](https://prntscr.com/11656pu)
-![showNaver](https://prntscr.com/11656vi)
-![deleteNaver](https://prntscr.com/1165746)
+Para promover a acessibilidade por meio dos dispositivos móveis, há uma certa responsividade dos componentes, possibilitando o uso de todas as funcionalidades disponíveis.
+
+![login](https://i.ibb.co/0qFC09Z/login.png)
+![home](https://i.ibb.co/1X07Zbd/home.png)
+![newNaver](https://i.ibb.co/P1YXx2P/newNaver.png)
+![showNaver](https://i.ibb.co/jMQ32K2/detail.png)
+![deleteNaver](https://i.ibb.co/zJLx0w9/delete.png)
 
 ## Funcionalidades
 
@@ -64,6 +66,6 @@ Para mostrar um alerta personalizado e amigável ao usuário, necessitei criar u
 
 ## Autor
 
-Leandro Pereira dos Santos
-Lsaantos@outlook.com
-www.linkedin.com/in/psleandro
+- Leandro Pereira dos Santos
+- Lsaantos@outlook.com
+- [Linkedin](www.linkedin.com/in/psleandro)

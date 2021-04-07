@@ -13,12 +13,12 @@ import api from '../../services/api';
 
 function NaverOptions(props){
 
-    const [name, setName] = useState('Jose');
-    const [job_role, setJob_role] = useState('Dev');
-    const [admission_date, setAdmission_date] = useState('10/04/2020');
-    const [birthdate, setBirthdate] = useState('05/10/2003');   
-    const [project, setProject] = useState('Project Frontend Test');
-    const [url, setUrl] = useState('https://ibcdn.canaltech.com.br/J8C9xiYBlDcfeTZrFl6rNBtYhMU=/138x138:5315x3052/512x288/smart/i321928.jpeg');
+    const [name, setName] = useState('');
+    const [job_role, setJob_role] = useState('');
+    const [admission_date, setAdmission_date] = useState('');
+    const [birthdate, setBirthdate] = useState('');   
+    const [project, setProject] = useState('');
+    const [url, setUrl] = useState('');
 
     const [alertConfig, setAlertConfig] = useState({});
     const showAlert = (title, message, buttons = null) => {
