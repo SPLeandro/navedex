@@ -68,4 +68,4 @@ Para mostrar um alerta personalizado e amigável ao usuário, necessitei criar u
 
 - Leandro Pereira dos Santos
 - Lsaantos@outlook.com
-- [Linkedin](www.linkedin.com/in/psleandro)
+- [Linkedin](https://www.linkedin.com/in/psleandro)
